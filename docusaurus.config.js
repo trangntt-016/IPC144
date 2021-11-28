@@ -39,6 +39,11 @@ module.exports = {
               label: 'Weekly Schedule',
               to: '/weeklyContents',
             },
+            {
+              html: `
+                <a href='/Seneca-IPC144.pdf' download='Seneca-IPC144.pdf' class='downloadFooter'>Download</a>
+              `,
+            },
           ],
         },
       ],
