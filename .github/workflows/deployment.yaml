@@ -29,7 +29,7 @@ jobs:
           yarn build
       - name: Run local on the page
         run: |
-          - yarn serve
+          - npx serve -s build &
       - name: Generate Seneca-IPC144.pdf
         run: |
           chmod +x ./convert-to-pdf.sh
