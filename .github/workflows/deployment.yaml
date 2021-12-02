@@ -29,15 +29,13 @@ jobs:
           yarn build
       - name: Generate Seneca-IPC144.pdf
         run: |
-          yarn serve & npx wait-on http://127.0.0.1/
           chmod +x ./convert-to-pdf.sh
           git add ./convert-to-pdf.sh
-          yarn to-pdf
+          node convert-to-pdf.js
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
           GIT_USER: git
         run: |
           mv -f ./Seneca-IPC144.pdf ./static/
-          yarn build
           yarn deploy
