@@ -16,7 +16,17 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-
+      - name: Build the page
+        run: |
+          git config --global user.name ${{ github.actor }}
+            if [ -e yarn.lock ]; then
+              yarn install --frozen-lockfile
+            elif [ -e package-lock.json ]; then
+              npm ci
+            else
+              npm i
+            fi
+          yarn run build
       - name: Generate Seneca-IPC144.pdf
         run: |
           chmod +x ./convert-to-pdf.sh
@@ -27,15 +37,4 @@ jobs:
           USE_SSH: true
           GIT_USER: git
         run: |
-          git config --global user.name ${{ github.actor }}
-          if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
           yarn deploy
-      - name: Build the page
-        run: |
-          yarn build
