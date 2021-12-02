@@ -38,4 +38,5 @@ jobs:
           GIT_USER: git
         run: |
           mv -f ./Seneca-IPC144.pdf ./static/
+          yarn build
           yarn deploy
