@@ -27,6 +27,9 @@ jobs:
               npm i
             fi
           yarn build
+      - name: Run local on the page
+        run: |
+          - yarn serve
       - name: Generate Seneca-IPC144.pdf
         run: |
           chmod +x ./convert-to-pdf.sh
