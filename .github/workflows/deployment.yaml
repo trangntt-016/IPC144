@@ -31,7 +31,7 @@ jobs:
         run: |
           chmod +x ./convert-to-pdf.sh
           git add ./convert-to-pdf.sh
-          node convert-to-pdf.js
+          yarn serve-convert
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
