@@ -26,7 +26,7 @@ jobs:
             else
               npm i
             fi
-          yarn run build
+          yarn run start
       - name: Generate Seneca-IPC144.pdf
         run: |
           chmod +x ./convert-to-pdf.sh
