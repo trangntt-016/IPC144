@@ -2,7 +2,7 @@ name: deployment
 
 on:
   push:
-    branches: [main]
+    branches: [test]
 
 jobs:
   gh-release:
@@ -16,6 +16,9 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
+      - name: Build the page
+        run: |
+          yarn build
       - name: Generate Seneca-IPC144.pdf
         run: |
           chmod +x ./convert-to-pdf.sh
