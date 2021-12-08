@@ -32,10 +32,10 @@ jobs:
           chmod +x ./convert-to-pdf.sh
           git add ./convert-to-pdf.sh
           yarn serve-convert
+          mv -f ./Seneca-IPC144.pdf ./static/
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
           GIT_USER: git
         run: |
-          mv -f ./Seneca-IPC144.pdf ./static/
           yarn deploy

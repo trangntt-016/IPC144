@@ -52,10 +52,3 @@ img {
   display: block;
   margin: auto;
 }
-
-.downloadFooter {
-  color: var(--ifm-color-primary-lightest);
-}
-.downloadFooter:hover {
-  color: var(--ifm-color-primary);
-}
