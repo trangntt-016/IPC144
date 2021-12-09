@@ -5,7 +5,7 @@ const opts = {
   resources: [`http://localhost:${PORT}/`],
 };
 const serve = async () => {
-  const { stdout, stderr } = await execa('yarn serve');
+  const { stdout, stderr } = await execa('npx serve -s build &');
   console.log(stdout);
   console.error(stderr);
 };
