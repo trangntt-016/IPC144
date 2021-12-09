@@ -8,7 +8,7 @@ module.exports = {
   url: 'https://ipc144.sdds.ca',
   baseUrl: '/',
   trailingSlash: false,
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Seneca-ICTOER',
@@ -69,6 +69,7 @@ module.exports = {
       },
     ],
   ],
+  clientModules: [require.resolve('./pwaCustomButton.js')],
   plugins: [
     [
       '@docusaurus/plugin-pwa',
