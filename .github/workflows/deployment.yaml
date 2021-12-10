@@ -38,5 +38,4 @@ jobs:
           USE_SSH: true
           GIT_USER: git
         run: |
-
           yarn deploy
