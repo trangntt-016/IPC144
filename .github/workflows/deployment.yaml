@@ -31,7 +31,7 @@ jobs:
         run: |
           chmod +x ./convert-to-pdf.sh
           git add ./convert-to-pdf.sh
-          yarn serve
+          npx serve
           yarn to-pdf
           npx kill-port 3000
           mv ./Seneca-IPC144.pdf ./static
