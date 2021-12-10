@@ -27,3 +27,4 @@ publish.bat
 
 # intellij configs
 .idea
+actions-runner

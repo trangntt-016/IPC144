@@ -53,9 +53,8 @@ img {
   margin: auto;
 }
 
-.downloadFooter {
-  color: var(--ifm-color-primary-lightest);
-}
-.downloadFooter:hover {
-  color: var(--ifm-color-primary);
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
